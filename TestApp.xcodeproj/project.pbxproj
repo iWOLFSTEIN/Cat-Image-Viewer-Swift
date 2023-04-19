@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1226406529EFC216004D11B3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226406329EFC216004D11B3 /* CollectionViewCell.swift */; };
+		1226406629EFC216004D11B3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1226406429EFC216004D11B3 /* CollectionViewCell.xib */; };
 		12B5CA4529D6DE24002AB947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B5CA4429D6DE24002AB947 /* AppDelegate.swift */; };
 		12B5CA4729D6DE24002AB947 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B5CA4629D6DE24002AB947 /* SceneDelegate.swift */; };
 		12B5CA4929D6DE24002AB947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B5CA4829D6DE24002AB947 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1226406329EFC216004D11B3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1226406429EFC216004D11B3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		12B5CA4129D6DE24002AB947 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B5CA4429D6DE24002AB947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12B5CA4629D6DE24002AB947 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				12B5CA4D29D6DE25002AB947 /* Assets.xcassets */,
 				12B5CA4F29D6DE25002AB947 /* LaunchScreen.storyboard */,
 				12B5CA5229D6DE25002AB947 /* Info.plist */,
+				1226406329EFC216004D11B3 /* CollectionViewCell.swift */,
+				1226406429EFC216004D11B3 /* CollectionViewCell.xib */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 			files = (
 				12B5CA5129D6DE25002AB947 /* LaunchScreen.storyboard in Resources */,
 				12B5CA4E29D6DE25002AB947 /* Assets.xcassets in Resources */,
+				1226406629EFC216004D11B3 /* CollectionViewCell.xib in Resources */,
 				12B5CA4C29D6DE24002AB947 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 			files = (
 				12B5CA4929D6DE24002AB947 /* ViewController.swift in Sources */,
 				12B5CA4529D6DE24002AB947 /* AppDelegate.swift in Sources */,
+				1226406529EFC216004D11B3 /* CollectionViewCell.swift in Sources */,
 				12B5CA4729D6DE24002AB947 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
