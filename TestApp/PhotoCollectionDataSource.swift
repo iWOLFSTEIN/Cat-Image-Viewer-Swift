@@ -7,10 +7,26 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 
-class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
-    var imagesList: [String] = ["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nationalgeographic.com%2Fanimals%2Fmammals%2Ffacts%2Fdomestic-cat&psig=AOvVaw0AzcYOtibxXUukXCp4MVnV&ust=1681973166944000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiAyLustf4CFQAAAAAdAAAAABAD", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.economictimes.com%2Fnews%2Finternational%2Fus%2Ftop-seven-cat-breeds-see-list%2Fslideshow%2F98637536.cms&psig=AOvVaw0AzcYOtibxXUukXCp4MVnV&ust=1681973166944000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiAyLustf4CFQAAAAAdAAAAABAI","https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nbcnews.com%2Fthink%2Fopinion%2Fcats-cute-furry-cuddly-invasive-alien-species-rcna41768&psig=AOvVaw0AzcYOtibxXUukXCp4MVnV&ust=1681973166944000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiAyLustf4CFQAAAAAdAAAAABAR","https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fcats%2F&psig=AOvVaw0AzcYOtibxXUukXCp4MVnV&ust=1681973166944000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiAyLustf4CFQAAAAAdAAAAABAa",]
+
+protocol MyCollectionViewDelegate: AnyObject {
+  func didSelectItem(with imageURL: URL)
+}
+
+
+class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    weak var delegate: MyCollectionViewDelegate?
+
+    
+    var imagesList: [String] = ["https://static01.nyt.com/images/2022/11/29/science/00tb-cats1/00tb-cats1-mediumSquareAt3X.jpg",
+        "https://www.humanesociety.org/sites/default/files/2022-08/hl-yp-cats-579652.jpg",
+        "https://med.stanford.edu/content/dam/sm-news/images/2021/09/cat_by-Kateryna-T-Unsplash.jpg",
+        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg",
+    ]
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,12 +44,30 @@ class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
         let image_url: String = imagesList[indexPath.row]
         let imageUrl = URL(string: image_url)!
         
+        let resource = ImageResource(downloadURL: imageUrl)
         cell.imageView.kf.indicatorType = .activity
-        cell.imageView.kf.setImage(with: imageUrl)
+        cell.imageView.kf.setImage(with: resource)
+        cell.imageView.isUserInteractionEnabled = false
+        
         cell.backgroundColor = .lightGray
             
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        _ = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        
+        let image_url: String = imagesList[indexPath.row]
+        let imageUrl = URL(string: image_url)!
+//        let resource = ImageResource(downloadURL: imageUrl)
+        
+        
+        print("something")
+        delegate?.didSelectItem(with: imageUrl)
 
+
+    }
 }

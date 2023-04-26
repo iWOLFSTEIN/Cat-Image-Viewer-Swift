@@ -19,11 +19,11 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q0B-eF-VhF">
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fEb-fx-0hb">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="1" id="fEb-fx-0hb">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -63,6 +63,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7b-y1-9hE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116.92307692307692" y="-2.1327014218009479"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="5Ni-Ro-QL1">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="DYs-i4-73K" customClass="ImageViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MEo-lq-lbg">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WvZ-1d-8LY">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wie-g9-kvV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WvZ-1d-8LY" firstAttribute="bottom" secondItem="Wie-g9-kvV" secondAttribute="bottom" id="C6D-gT-dkc"/>
+                            <constraint firstItem="WvZ-1d-8LY" firstAttribute="leading" secondItem="Wie-g9-kvV" secondAttribute="leading" id="cHm-Gk-Vhb"/>
+                            <constraint firstItem="WvZ-1d-8LY" firstAttribute="top" secondItem="Wie-g9-kvV" secondAttribute="top" id="neI-sM-5ag"/>
+                            <constraint firstItem="WvZ-1d-8LY" firstAttribute="trailing" secondItem="Wie-g9-kvV" secondAttribute="trailing" id="pGZ-of-kL9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="catImageView" destination="WvZ-1d-8LY" id="cqE-7r-3oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAG-aG-Ogg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2007" y="13"/>
         </scene>
     </scenes>
     <resources>
